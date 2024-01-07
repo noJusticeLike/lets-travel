@@ -12,7 +12,9 @@ let auth = require('./controllers/auth');
 
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb+srv://densuper2701:denslyva2701@mycluster.jw9ossj.mongodb.net/travels');
+let username = process.env.mongoUserName;
+let password = process.env.mongoUserPass;
+mongoose.connect(`mongodb+srv://${username}:${password}@mycluster.jw9ossj.mongodb.net/travels`);
 
 app.use(express.json());
 
